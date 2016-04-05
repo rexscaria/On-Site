@@ -14,7 +14,7 @@ class Calculator(object):
     add = staticmethod(lambda a,b: a + b)
     subtract = staticmethod(lambda a,b: a - b)
     multiply = staticmethod(lambda a,b: a*b)
-    divide = staticmethod(lambda a,b: a/b)
+    divide = staticmethod(lambda a,b: float(a)/float(b))
     modulus = staticmethod(lambda a,b: a%b)
     _operand_map = {
         '+': add,
