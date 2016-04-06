@@ -12,5 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.mousewheel.min
+//= require jquery.terminal-0.9.3.min
+//= require unix_formatting
+
 //= require turbolinks
 //= require_tree .

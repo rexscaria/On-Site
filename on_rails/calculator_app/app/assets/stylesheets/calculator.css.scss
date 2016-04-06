@@ -1,3 +1,573 @@
-// Place all the styles related to the calculator controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+//colors
+$color_silver_chalice_99_approx: rgba(170, 170, 170, 0.99);
+$black: #000;
+$white: #fff;
+$color_silver_chalice_approx: #aaa;
+$color_gallery_approx: #eee;
+$color_red_approx: #e00;
+$color_robins_egg_blue_approx: #07c7ed;
+$green: #0f0;
+$color_la_palma_approx: #269100;
+$color_rose_of_sharon_approx: #bb5400;
+$color_magenta_fuchsia_approx: #f2f;
+$color_piper_approx: #ca651d;
+$color_french_rose_approx: #f58;
+$magenta_fuchsia: #f0f;
+$red: #f00;
+$color_reno_sand_approx: #b26818;
+
+//fonts
+$font_0: 'Droid Sans Mono';
+$font_1: 'Courier New';
+$font_2: 'monospace';
+
+//urls
+$url_0: url('images/black-loader.gif');
+
+//@extend-elements
+//original selectors
+//header, article, footer
+%extend_1 {
+	color: $color_silver_chalice_approx;
+	background-color: $black;
+	width: 70%;
+	//vendor-prefix found
+	//-webkit-border-radius: 10px
+	//vendor-prefix found
+	//-moz-border-radius: 10px
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 10px;
+}
+
+//original selectors
+//section .terminal, section .wrapper, #share
+%extend_2 {
+	border: 1px solid $color_silver_chalice_approx;
+	//vendor-prefix found
+	//-webkit-border-radius: 5px
+	//vendor-prefix found
+	//-moz-border-radius: 5px
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 5px;
+}
+
+//original selectors
+//section .wrapper .text, section .snippet-wrap ul
+%extend_3 {
+	line-height: 16px;
+	padding: 0;
+	width: 100%;
+	font-size: 12px;
+	text-align: left;
+	margin: 3em 0 2em 2em;
+	text-indent: 0;
+	top: 0;
+	left: 0;
+}
+
+
+article {
+	display: block;
+	@extend %extend_1;
+	margin: 20px 0;
+	width: 100%;
+	padding: 20px 0 60px;
+}
+aside {
+	display: block;
+}
+dialog {
+	display: block;
+}
+figure {
+	display: block;
+}
+footer {
+	display: block;
+	display: block;
+	margin: 10px auto;
+	@extend %extend_1;
+	color: $color_silver_chalice_approx;
+	font-family: $font_0, $font_1, $font_2;
+	padding: 10px 0;
+	a {
+		color: $color_silver_chalice_approx;
+		font-family: $font_0, $font_1, $font_2;
+		color: $color_gallery_approx;
+		&:hover {
+			color: $color_red_approx;
+		}
+	}
+	p {
+		font-size: 0.75em;
+		text-align: center;
+		margin: 0;
+	}
+}
+header {
+	display: block;
+	display: block;
+	margin: 10px auto;
+	@extend %extend_1;
+	&#main {
+		height: 140px;
+		background-color: $black;
+		a {
+			text-decoration: none;
+		}
+		h1 {
+			display: none;
+		}
+	}
+	pre {
+		color: $color_silver_chalice_approx;
+		font-size: 14px;
+		color: $color_silver_chalice_approx;
+		font-family: $font_0, $font_1, $font_2;
+	}
+	h2 {
+		font-weight: normal;
+		margin-left: 40px;
+		&:after {
+			content: " >";
+			padding-left: 5px;
+		}
+	}
+}
+hgroup {
+	display: block;
+}
+menu {
+	display: block;
+}
+nav {
+	display: block;
+	display: block;
+	margin: 10px auto;
+	background: $black;
+	height: 50px;
+	margin-top: -70px;
+	top: 140px;
+	width: 800px;
+	text-align: center;
+	ul {
+		width: 800px;
+		margin: 0 auto;
+		padding: 0;
+		text-indent: 0;
+		li {
+			list-style: none;
+			float: left;
+			padding: 10px;
+			margin: 8px;
+			a {
+				color: $color_silver_chalice_approx;
+				font-family: $font_0, $font_1, $font_2;
+				outline: none;
+				padding: 2px 4px;
+				text-decoration: none;
+				display: block;
+				&:visited {
+					color: $color_silver_chalice_approx;
+					font-family: $font_0, $font_1, $font_2;
+					display: block;
+				}
+				&:hover {
+					background-color: $color_silver_chalice_approx;
+					color: $black;
+				}
+			}
+		}
+	}
+}
+section {
+	display: block;
+	display: block;
+	margin: 10px auto;
+	@extend %extend_1;
+	color: $color_silver_chalice_approx;
+	font-family: $font_0, $font_1, $font_2;
+	margin-top: 30px;
+	padding: 0;
+	ul {
+		margin: 20px auto 20px 200px;
+		line-height: 1.7em;
+		font-size: 0.75em;
+		text-align: justify;
+		width: 480px;
+		li {
+			padding-bottom: 5px;
+			list-style-type: disc;
+		}
+		ul {
+			margin: 20px 0 20px 20px;
+			font-size: 1em;
+		}
+		p {
+			font-size: 1em;
+			margin: 0;
+		}
+	}
+	p {
+		margin: 20px auto 20px 200px;
+		line-height: 1.7em;
+		font-size: 0.75em;
+		text-align: justify;
+		width: 520px;
+	}
+	h3 {
+		margin: 20px auto 20px 200px;
+		line-height: 1.7em;
+	}
+	a {
+		color: $color_gallery_approx;
+		&:visited {
+			color: $color_gallery_approx;
+		}
+		&:hover {
+			color: $color_red_approx;
+		}
+	}
+	.terminal {
+		@extend %extend_2;
+		width: 94%;
+	    font-size: 17px !important;
+        margin: 0 30px 0 30px;
+	}
+	.wrapper {
+		@extend %extend_2;
+		margin: 0 0 30px 200px;
+		width: 520px;
+		.text {
+			@extend %extend_3;
+		}
+		.sh_sourceCode {
+			background: transparent;
+		}
+	}
+	.snippet-wrap {
+		li {
+			list-style: none;
+		}
+		ul {
+			@extend %extend_3;
+			li {
+				padding: 0;
+			}
+		}
+		pre {
+			margin: 0;
+			padding: 0;
+			display: block;
+		}
+	}
+	.syntax_toogle {
+		outline: none;
+		float: right;
+		font-size: 0.8em;
+		z-index: 100;
+		right: 0;
+		padding: 4px 10px;
+		text-decoration: none;
+		border: 1px solid $color_silver_chalice_approx;
+		border-top: none;
+		border-right: none;
+		//vendor-prefix found
+		//-webkit-border-bottom-left-radius: 10px
+		//vendor-prefix found
+		//-moz-border-radius-bottomleft: 10px
+		//Instead of the line below you could use @include border-bottom-left-radius($radius)
+		border-bottom-left-radius: 10px;
+	}
+	pre {
+		padding: 2em;
+	}
+	li {
+		.wrapper {
+			margin: 20px 0;
+			width: 478px;
+			font-size: 12px;
+		}
+		.syntax_toogle {
+			font-size: 1em;
+		}
+	}
+	header h1 {
+		color: $color_silver_chalice_approx;
+		font-family: $font_0, $font_1, $font_2;
+		text-align: right;
+		font-size: 1.7em;
+		font-weight: normal;
+		margin-right: 40px;
+		padding: 20px 0;
+		&:before {
+			content: "<";
+			padding-right: 5px;
+		}
+	}
+}
+body {
+	padding: 0;
+	margin: 0;
+	background-color: $white;
+	.ui-widget-content {
+		background-color: $black;
+		background-image: none;
+	}
+	.ui-widget {
+		font-size: 0.8em;
+	}
+	.ui-dialog .ui-widget-content {
+		background-color: $black;
+		background-image: none;
+	}
+}
+.skip {
+	position: absolute !important;
+	clip: rect(1px, 1px, 1px, 1px);
+}
+@media screen and(-webkit-min-device-pixel-ratio:0) {
+	.separator {
+		font-weight: bold;
+	}
+	::selection {
+		background: $color_silver_chalice_99_approx;
+		color: $black;
+	}
+	pre#sig {
+		font-weight: bold;
+	}
+}
+.separator {
+	overflow: hidden;
+	position: absolute;
+	width: 800px;
+	padding: 0;
+	margin: 0;
+	margin-top: 125px;
+}
+.load {
+	background: $url_0 50% 50% no-repeat;
+}
+p::selection {
+	background-color: $color_silver_chalice_approx;
+	color: $black;
+}
+a::selection {
+	background-color: $color_silver_chalice_approx;
+	color: $black;
+}
+ul::selection {
+	background-color: $color_silver_chalice_approx;
+	color: $black;
+}
+li::selection {
+	background-color: $color_silver_chalice_approx;
+	color: $black;
+}
+pre::selection {
+	background-color: $color_silver_chalice_approx;
+	color: $black;
+}
+strong::selection {
+	background-color: $color_silver_chalice_approx;
+	color: $black;
+}
+header::selection {
+	background-color: $color_silver_chalice_approx;
+	color: $black;
+}
+span::selection {
+	background-color: $color_silver_chalice_approx;
+	color: $black;
+}
+h2::selection {
+	background-color: $color_silver_chalice_approx;
+	color: $black;
+}
+p::-moz-selection {
+	background-color: $color_silver_chalice_approx;
+	color: $black;
+}
+a::-moz-selection {
+	background-color: $color_silver_chalice_approx;
+	color: $black;
+}
+ul::-moz-selection {
+	background-color: $color_silver_chalice_approx;
+	color: $black;
+}
+li::-moz-selection {
+	background-color: $color_silver_chalice_approx;
+	color: $black;
+}
+pre::-moz-selection {
+	background-color: $color_silver_chalice_approx;
+	color: $black;
+}
+strong::-moz-selection {
+	background-color: $color_silver_chalice_approx;
+	color: $black;
+}
+header::-moz-selection {
+	background-color: $color_silver_chalice_approx;
+	color: $black;
+}
+h2::-moz-selection {
+	background-color: $color_silver_chalice_approx;
+	color: $black;
+}
+span::-moz-selection {
+	background-color: $color_silver_chalice_approx;
+	color: $black;
+}
+strong {
+	color: $white;
+}
+#share {
+	margin: 20px auto 20px 200px;
+	line-height: 1.7em;
+	width: 520px;
+	@extend %extend_2;
+	padding: 10px 0;
+	#wrapper {
+		width: 330px;
+		margin: 0 auto;
+	}
+	iframe {
+		margin-left: 20px;
+	}
+	span.db-wrapper {
+		margin-left: 20px;
+	}
+}
+.comment {
+	margin: 20px auto 20px 200px;
+	line-height: 1.7em;
+	width: 520px;
+}
+button {
+	background-color: $black;
+	color: $white;
+	border: 1px solid $white;
+	//vendor-prefix found
+	//-webkit-border-radius: 3px
+	//vendor-prefix found
+	//-moz-border-radius: 3px
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 3px;
+	outline: none;
+}
+.sh_sourceCode {
+	color: $color_silver_chalice_approx;
+	.sh_keyword {
+		color: $color_robins_egg_blue_approx;
+		font-weight: bold;
+	}
+	.sh_type {
+		color: $green;
+	}
+	.sh_string {
+		color: $color_la_palma_approx;
+	}
+	.sh_regexp {
+		color: $color_rose_of_sharon_approx;
+	}
+	.sh_specialchar {
+		color: $color_magenta_fuchsia_approx;
+	}
+	.sh_comment {
+		color: $color_piper_approx;
+	}
+	.sh_number {
+		color: $color_french_rose_approx;
+	}
+	.sh_preproc {
+		color: $magenta_fuchsia;
+	}
+	.sh_function {
+		color: $white;
+	}
+	.sh_url {
+		color: $red;
+	}
+	.sh_date {
+		color: $color_reno_sand_approx;
+	}
+	.sh_time {
+		color: $color_reno_sand_approx;
+	}
+	.sh_file {
+		color: $color_reno_sand_approx;
+	}
+	.sh_ip {
+		color: $red;
+	}
+}
+#user_comments {
+	min-height: 100px;
+	clear: both;
+	p {
+		font-size: 1em;
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+		color: $white;
+	}
+	.comment {
+		clear: both;
+		padding: 1.5em 0;
+		p {
+			font-size: 0.7em;
+			width: 372px;
+			margin-left: 148px;
+			text-align: left;
+		}
+		ul {
+			margin: 0;
+			padding: 0 10px;
+			width: 75px;
+			float: left;
+			li {
+				list-style: none;
+				overflow: hidden;
+				height: 1.5em;
+			}
+		}
+		img {
+			float: left;
+		}
+	}
+}
+.donate {
+	position: fixed;
+	top: 50%;
+	right: 10px;
+	margin-top: -72px;
+}
+#wild {
+	> ul {
+		padding: 0;
+		> li {
+			list-style: none;
+			margin: 2em 0 0;
+		}
+	}
+	ul ul {
+		padding: 0;
+		margin: 1em 0 0 3em;
+	}
+}
+pre#sig {
+	position: absolute;
+	width: 100%;
+	display: block;
+	margin-left: -24%;
+	left: 50%;
+	margin-top: 0px;
+}
+#main img {
+	position: absolute;
+	left: -99999px;
+}

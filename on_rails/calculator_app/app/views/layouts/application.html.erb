@@ -1,14 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>CalculatorApp</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>CalculatorApp</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header id="main">
 
-<%= yield %>
+      <pre id="sig">     
 
-</body>
+     ____  ____  __ _         ___   __   __     ___  _  _  __     __  ____  __  ____ 
+    (  _ \(  _ \(  ( \       / __) / _\ (  )   / __)/ )( \(  )   / _\(_  _)/  \(  _ \
+     )   / ) __//    /      ( (__ /    \/ (_/\( (__ ) \/ (/ (_/\/    \ )( (  O ))   /
+    (__\_)(__)  \_)__)       \___)\_/\_/\____/ \___)\____/\____/\_/\_/(__) \__/(__\_)
+                                               Created by : Scaria&lt;github.com/scaria&gt;  
+      </pre>
+
+    </header>
+
+    <section>
+      <article>
+        <div id="terminal" class="terminal" style="height: 600px;">
+          <div class="terminal-output">
+            <%= yield %>
+          </div>
+        </div>
+      </article>
+    </section>
+    <footer>
+            <p id="copy">Credits: JQuery Terminal Emulator (<a href="http://terminal.jcubic.pl/" >link</a>, <a href="http://jcubic.pl/jakub-jankiewicz">Jakub Jankiewicz</a>)</p>
+    </footer>
+
+  </body>
 </html>

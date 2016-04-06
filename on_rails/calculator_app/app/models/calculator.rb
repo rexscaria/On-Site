@@ -29,9 +29,9 @@ class Calculator
   list :storage, :expiration => 1.hour, :marshal => true
   
   @@add = lambda{|a,b| a+b }
-  @@subtract = lambda{|a,b| a-b }
+  @@subtract = lambda{|a,b| b-a }
   @@multiply = lambda{|a,b| a*b }
-  @@divide = lambda{|a,b| a.to_f/b.to_f }
+  @@divide = lambda{|a,b| b.to_f/a.to_f }
   @@modulus = lambda{|a,b| a%b }
   
   @@operator_map = {

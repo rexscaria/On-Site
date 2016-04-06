@@ -2,11 +2,8 @@ class CalculatorController < ApplicationController
   skip_before_filter :verify_authenticity_token
   
   def index
-  end
-
-  def new
     @id = SecureRandom.hex(4)
-    render :json => {:success => true, :id=>@id}
+    #render :json => {:success => true, :id=>@id}
   end
 
   def create

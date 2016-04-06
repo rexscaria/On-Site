@@ -1,2 +1,37 @@
-<h1>Calculator#index</h1>
-<p>Find me in app/views/calculator/index.html.erb</p>
+<script>
+$.calc_id = "<%= @id %>";
+
+jQuery(function($, undefined) {
+  $('#terminal').terminal(function(command, term) {
+    if (command !== '') {
+      try {
+        $.ajax({
+          method: 'POST',
+          dataType: 'json',
+          url: '<%= calculator_index_path %>',
+          async: false,
+          data: {'calculator[id]': $.calc_id, 'calculator[param]': command},
+          success: function(data){
+            if (data.success) {
+              term.echo(data.result + "");
+            }else{
+              term.error(data.result);
+            }},
+          fail: function(){
+            term.error("Failed to reach the calculator");
+          }
+        });
+
+      } catch(e) {
+        term.error(new String(e));
+      }
+    } else {
+      term.echo('');
+    }
+  }, {
+    greetings: 'PRN Calculator',
+    name: 'js_demo',
+    height: '400px',
+    prompt: ' > '});
+});
+</script>
