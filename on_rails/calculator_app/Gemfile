@@ -53,5 +53,8 @@ end
 
 # Use debugger
 
-ruby '1.9.3'
+if ENV["RAILS_ENV"] == "production"
+    ruby '1.9.3'
+end
+
 # gem 'debugger', group: [:development, :test]
