@@ -7,9 +7,9 @@ gem 'redis'
 gem 'redis-namespace'
 gem 'redis-objects'
 
+gem 'hiredis' #'0.6.1'
 gem 'dm-core'
-gem 'dm-redis-adapter'
-gem 'hiredis'
+gem 'dm-redis-adapter'#, '0.10.1'
 
 gem 'rails_12factor', group: :production
 
