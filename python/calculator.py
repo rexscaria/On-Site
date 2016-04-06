@@ -23,7 +23,6 @@ class Calculator(object):
         '/': divide,
         '%': modulus
     }
-    _supported_types = [int, float]
 
     def __init__(self):
         self.storage = []
@@ -54,10 +53,7 @@ class Calculator(object):
 
     def _is_state_operable(self):
         if self._is_param_operator():
-            are_operands_supported = len(self.storage) >= 2 and \
-                                     type(self.storage[len(self.storage) - 1]) in self._supported_types and \
-                                     type(self.storage[len(self.storage) - 2]) in self._supported_types
-            return are_operands_supported
+            return len(self.storage) >= 2
         return True
 
     def _process(self):
