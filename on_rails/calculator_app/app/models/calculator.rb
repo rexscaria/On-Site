@@ -12,6 +12,11 @@ class InvalidPolishExpression < StandardError
   end
 end
 
+class NotSupportedInputException < StandardError
+    def initialize(msg)
+      @message = msg
+    end
+end
 
 class Calculator
   
