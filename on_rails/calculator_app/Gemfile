@@ -9,6 +9,7 @@ gem 'redis-objects'
 
 gem 'dm-core'
 gem 'dm-redis-adapter'
+gem 'hiredis'
 
 gem 'rails_12factor', group: :production
 
