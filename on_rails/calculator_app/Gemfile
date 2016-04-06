@@ -52,4 +52,6 @@ end
 # gem 'capistrano', group: :development
 
 # Use debugger
+
+ruby '1.9.3'
 # gem 'debugger', group: [:development, :test]
