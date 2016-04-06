@@ -3,7 +3,6 @@ class CalculatorController < ApplicationController
   
   def index
     @id = SecureRandom.hex(4)
-    #render :json => {:success => true, :id=>@id}
   end
 
   def create
@@ -17,15 +16,13 @@ class CalculatorController < ApplicationController
 
     begin
       @success = true
-      @error = ""
       @msg = @c.input(params[:calculator][:param]) 
-    rescue => e
+    rescue Exception => e
       @success = false
-      @error = e.class
       @msg = e.message
     end
    
-    render :json => {:success => @success, :result=>@msg, :error=> @error}
+    render :json => {:success => @success, :result=>@msg}
   end
 
   def calculator_params

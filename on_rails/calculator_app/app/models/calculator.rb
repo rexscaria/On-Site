@@ -3,9 +3,6 @@ require 'redis-objects'
 require 'dm-core'
 require 'dm-redis-adapter'
 
-DataMapper.setup(:default, {:adapter  => "redis"})
-Redis.current = Redis.new(:host => '127.0.0.1', :port => 6379)
-
 class InvalidPolishExpression < StandardError
   def initialize(msg)
     @message = msg
