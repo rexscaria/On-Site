@@ -1,6 +1,6 @@
 # On-Site.com PRN challenge
 
-The PEN calculator is implemented in following technologies
+The PRN calculator is implemented in following technologies
 
   - Ruby On Rails ( command line style web app)
   - Ruby (command line app)
